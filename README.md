@@ -173,49 +173,6 @@ The model successfully identifies high-risk deliveries before shipment and can s
 
 ---
 
-# Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- SMOTE
-- Random Forest Classifier
-- Jupyter Notebook
-
----
-
-# Supply Chain Concepts Applied
-
-- Delivery Performance Analytics
-- Supply Chain KPIs
-- Root Cause Analysis
-- Logistics Bottleneck Detection
-- Profitability Analysis
-- Predictive Analytics
-- Operational Risk Modeling
-- Machine Learning Classification
-- Time-Based Demand Analysis
-
----
-
-# Strategic Recommendations
-
-The analysis recommends:
-
-1. Audit First & Second Class shipping immediately
-2. Deploy predictive alert systems
-3. Improve payment processing workflows
-4. Build seasonal surge-capacity planning
-5. Optimize shipping-mode assignment logic
-6. Investigate high-delay departments
-7. Reduce loss-making orders
-8. Continuously retrain ML models
-
----
-
 # Repository Structure
 
 ```bash
