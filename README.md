@@ -1,195 +1,357 @@
-# Supply Chain Delivery Performance Analysis
+# Supply Chain Delivery Performance Analysis & Late Delivery Risk Prediction
 
-This project analyzes end-to-end delivery operations for a global e-commerce supply chain using exploratory data analysis, KPI evaluation, bottleneck detection, root cause analysis, and machine learning.
+## Project Overview
 
-The objective is to identify the operational drivers behind late deliveries, quantify their business impact, and build a predictive system capable of identifying high-risk orders before shipment.
+This project analyzes end-to-end delivery operations for a global e-commerce supply chain to identify operational bottlenecks, quantify the impact of delivery delays, and develop a machine learning model capable of predicting late delivery risk before shipment.
+
+Late deliveries affect customer satisfaction, increase operational costs, disrupt inventory planning, and reduce overall supply chain reliability. The objective of this project was to understand the root causes of delivery delays and provide data-driven recommendations to improve logistics performance.
+
+The project combines exploratory data analysis, KPI evaluation, bottleneck detection, root cause analysis, profitability assessment, and predictive analytics to create a complete supply chain performance monitoring framework.
+
+---
+
+## Project Files
+
+| File           | Objective                                                           |
+| -------------- | ------------------------------------------------------------------- |
+| Analysis.ipynb | Supply chain performance analysis and late delivery risk prediction |
+| Report.pdf     | Business report summarizing findings and recommendations            |
+
+---
 
 ## View Project
 
-- 📓 [View Jupyter Notebook](https://nbviewer.org/github/chandran1994/Python-Supply-Chain-Performance-Analysis/blob/main/Analysis.ipynb)
-- 📊 Report.pdf
+📓 [View Notebook](https://nbviewer.org/github/chandran1994/Python-Supply-Chain-Performance-Analysis/blob/main/Analysis.ipynb)
+
+📊 Report.pdf
 
 ---
 
 # Business Problem
 
-The company experiences consistently high late-delivery rates across multiple regions, shipping modes, and product categories.
+A global e-commerce operation was experiencing consistently high late-delivery rates across multiple regions, shipping modes, and customer segments.
 
-Late deliveries create:
+Late deliveries create several business challenges:
 
-- Reduced customer satisfaction
-- Increased operational pressure
-- Lower delivery reliability
-- Profitability erosion
-- Supply chain inefficiencies
+* Reduced customer satisfaction
+* Increased operational pressure
+* Higher logistics costs
+* Lower service-level performance
+* Revenue and profitability risk
+* Supply chain inefficiencies
 
----
-
-# Project Objectives
-
-- Analyze overall delivery performance
-- Measure late-delivery impact on profitability
-- Identify operational bottlenecks
-- Detect root causes of delays
-- Analyze time-based delay behavior
-- Build a predictive machine learning model for late delivery risk
-- Generate strategic recommendations for operational improvement
+The goal was to identify the operational drivers behind delays and develop a predictive system capable of identifying high-risk orders before shipment.
 
 ---
 
-# Dataset Overview
+# Analytical Workflow
 
-- Total Orders Analyzed: **172,765**
-- Time Period: **January 2015 – January 2018**
-- Global multi-region e-commerce operations
-- Includes:
-  - Order information
-  - Shipping modes
-  - Customer segments
-  - Product departments
-  - Profitability metrics
-  - Delivery status
-  - Payment types
-  - Regional logistics data
-
----
-
-# Key Performance Indicators (KPIs)
-
-| KPI | Value |
-|---|---|
-| Total Orders | 172,765 |
-| Late Deliveries | 94,523 |
-| Late Delivery Rate | 54.71% |
-| On-Time Delivery Rate | 45.29% |
-| Total Profit | $7.5M |
-| Profit at Risk | $2.1M |
-| Predictive Model Accuracy | 74% |
+```text
+Raw Supply Chain Data
+            ↓
+Data Cleaning & Preparation
+            ↓
+KPI Analysis
+            ↓
+Exploratory Data Analysis
+            ↓
+Bottleneck Detection
+            ↓
+Root Cause Analysis
+            ↓
+Profitability Assessment
+            ↓
+Machine Learning Model
+            ↓
+Operational Recommendations
+```
 
 ---
 
-# Project Workflow
+## Dataset Overview
 
-## 1. Data Cleaning & Preparation
+The dataset contains approximately 172,000+ global e-commerce orders covering multiple regions, product categories, shipping methods, and customer segments.
 
-- Missing value handling
-- Datetime conversion
-- Feature engineering
-- Delay calculation
-- Profit classification
-- Outlier inspection
+### Data Included
 
----
+```text
+Order Information
+    ├── Order Status
+    ├── Delivery Status
+    ├── Shipping Mode
+    └── Order Dates
 
-## 2. Exploratory Data Analysis (EDA)
+Customer Information
+    ├── Customer Segment
+    ├── Geographic Region
+    └── Market
 
-Performed detailed analysis on:
+Operational Information
+    ├── Delivery Times
+    ├── Shipping Performance
+    ├── Product Categories
+    └── Logistics Metrics
 
-- Delay distribution
-- Profitability distribution
-- Shipping mode performance
-- Regional performance
-- Customer segment behavior
-- Department-level delays
-- Payment-type bottlenecks
-- Time-series delay patterns
-
----
-
-## 3. Bottleneck Detection
-
-Operational bottlenecks were analyzed across:
-
-- Shipping modes
-- Geographic regions
-- Customer segments
-- Order statuses
-- Payment methods
-- Product departments
-
-### Major Findings
-
-- First Class shipping had a **100% delay rate**
-- Second Class shipping showed **79.8% delays**
-- Standard Class significantly outperformed premium modes
-- Delay patterns were systemic across all regions
-
-Which is bad for something called “First Class.”
+Financial Information
+    ├── Revenue
+    ├── Profit
+    └── Profitability Measures
+```
 
 ---
 
-# Root Cause Analysis
+## Data Preparation
 
-Deep-dive analysis identified:
+The project began with extensive data cleaning and feature engineering.
 
-- Shipping mode misconfiguration
-- Payment review delays
-- Seasonal demand spikes
-- Capacity planning weaknesses
-- Department-specific fulfillment inefficiencies
+Key preprocessing activities included:
 
-Central Africa emerged as the highest-delay region during analysis.
+* Missing value treatment
+* Datetime conversion
+* Delay calculations
+* Profit classification
+* Feature engineering
+* Outlier inspection
+* Data quality validation
 
----
-
-# Time-Based Analysis
-
-Delay trends were analyzed across:
-
-- Months
-- Days of week
-- Hours of day
-
-### Key Insights
-
-- August, September, and December showed peak delays
-- Late-evening orders had the highest delay probability
-- Midday processing bottlenecks were visible
+These transformations created the foundation for operational and predictive analysis.
 
 ---
 
-# Machine Learning Model
+## KPI Analysis
 
-A supervised machine learning classification model was developed to predict:
+Several key supply chain performance metrics were calculated to establish a baseline understanding of operational performance.
+
+### KPIs Evaluated
 
 ```python
-Late_delivery_risk = 1
+Late Delivery Rate
+
+On-Time Delivery Rate
+
+Total Orders
+
+Total Profit
+
+Profit at Risk
+
+Delivery Performance Metrics
 ```
 
-## ML Pipeline
-
-- Frequency encoding
-- Train-test split
-- SMOTE oversampling
-- Random Forest Classification
+These KPIs provided visibility into delivery reliability and the financial impact of operational inefficiencies.
 
 ---
 
-# Model Performance
+## Exploratory Data Analysis
 
-| Metric | Score |
-|---|---|
-| Accuracy | 74% |
-| Precision (Late Orders) | 0.78 |
-| Recall (Late Orders) | 0.75 |
-| F1-Score | 0.74 |
+The analysis investigated how delays varied across multiple operational dimensions.
 
-The model successfully identifies high-risk deliveries before shipment and can support proactive intervention systems.
+### Operational Dimensions Analyzed
+
+```python
+Shipping Modes
+
+Regions
+
+Customer Segments
+
+Departments
+
+Payment Types
+
+Order Status
+
+Delivery Status
+```
+
+The goal was to identify patterns, bottlenecks, and operational weaknesses contributing to poor delivery performance.
 
 ---
 
-# Repository Structure
+## Shipping Mode Performance Analysis
 
-```bash
-├── Analysis.ipynb
-├── Report.pdf
-└── README.md
+Shipping methods were evaluated to understand their impact on delivery reliability.
+
+### Analysis Performed
+
+```python
+Delay Rate by Shipping Mode
+
+Order Volume by Shipping Mode
+
+Shipping Performance Comparison
 ```
+
+The analysis revealed significant differences in performance across shipping methods and highlighted operational inconsistencies that contributed to delays.
 
 ---
 
-# Author
+## Regional Performance Analysis
 
-**Chandran**  
-Supply Chain Analytics | Data Analytics | Machine Learning Enthusiast
+Geographic performance was examined to identify regions experiencing elevated delivery risk.
+
+### Analysis Performed
+
+```python
+Regional Delay Rates
+
+Regional Profitability
+
+Geographic Performance Comparison
+
+Market-Level Analysis
 ```
+
+This analysis highlighted areas where logistics processes may require additional capacity, process improvements, or operational intervention.
+
+---
+
+## Customer Segment Analysis
+
+Delivery performance was evaluated across customer groups to understand how service quality varied among different customer segments.
+
+### Analysis Performed
+
+```python
+Customer Segment Performance
+
+Delay Distribution
+
+Revenue Contribution Analysis
+
+Service-Level Comparison
+```
+
+Understanding customer-level delivery performance helps prioritize operational improvements where they have the greatest business impact.
+
+---
+
+## Product Department Analysis
+
+Department-level performance was analyzed to identify categories experiencing disproportionate delay rates.
+
+### Analysis Performed
+
+```python
+Department Delay Analysis
+
+Revenue Impact Assessment
+
+Operational Bottleneck Detection
+```
+
+This analysis helped identify operational areas requiring targeted process improvement.
+
+---
+
+## Profitability Impact Analysis
+
+The relationship between delivery performance and profitability was evaluated.
+
+### Analysis Performed
+
+```python
+Profit Distribution
+
+Profit at Risk Analysis
+
+Late Delivery Profit Impact
+
+Revenue Performance Evaluation
+```
+
+The analysis quantified the financial consequences of delivery failures and highlighted the business value of improving operational performance.
+
+---
+
+## Root Cause Analysis
+
+After identifying delay hotspots, a deeper investigation was performed to uncover underlying operational drivers.
+
+### Factors Investigated
+
+```text
+Shipping Mode Configuration
+
+Payment Processing Delays
+
+Seasonal Demand Surges
+
+Regional Constraints
+
+Department-Level Bottlenecks
+
+Operational Capacity Limitations
+```
+
+The objective was to move beyond symptom identification and understand the mechanisms contributing to delivery delays.
+
+---
+
+## Time-Series Analysis
+
+Delivery performance was analyzed across different time dimensions to identify recurring operational patterns.
+
+### Time-Based Analysis
+
+```python
+Monthly Delay Trends
+
+Daily Delay Patterns
+
+Hourly Performance Analysis
+
+Seasonal Variations
+```
+
+This analysis revealed periods associated with elevated delivery risk and operational pressure.
+
+---
+
+## Machine Learning: Late Delivery Risk Prediction
+
+The final stage of the project focused on developing a predictive model capable of identifying orders likely to experience delivery delays.
+
+### Target Variable
+
+```python
+Late_Delivery_Risk
+
+0 = On-Time Delivery
+
+1 = Late Delivery
+```
+
+### Machine Learning Pipeline
+
+```text
+Feature Engineering
+        ↓
+Frequency Encoding
+        ↓
+Train-Test Split
+        ↓
+SMOTE Oversampling
+        ↓
+Random Forest Classification
+        ↓
+Prediction & Evaluation
+```
+
+### Model Objectives
+
+The model was designed to:
+
+* Predict late deliveries before shipment
+* Support proactive intervention
+* Improve delivery reliability
+* Reduce operational risk
+* Improve customer service performance
+
+By identifying high-risk orders early, logistics teams can take corrective action before delays occur.
+
+---
+
+## Business Value
+
+This project demonstrates how analytics and machine learning can improve supply chain visibility and operational decision-making.
