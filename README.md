@@ -4,6 +4,11 @@ This project analyzes end-to-end delivery operations for a global e-commerce sup
 
 The objective is to identify the operational drivers behind late deliveries, quantify their business impact, and build a predictive system capable of identifying high-risk orders before shipment.
 
+## View Project
+
+- 📓 [View Jupyter Notebook](https://nbviewer.org/github/chandran1994/Python-Supply-Chain-Performance-Analysis/blob/main/Analysis.ipynb)
+- 📊 Report.pdf
+
 ---
 
 # Business Problem
