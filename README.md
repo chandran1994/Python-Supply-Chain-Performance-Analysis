@@ -226,41 +226,6 @@ The analysis recommends:
 
 ---
 
-# Learning Outcomes
-
-This project demonstrates practical skills in:
-
-- Supply chain analytics
-- Delivery KPI analysis
-- Business problem solving
-- Exploratory data analysis
-- Machine learning classification
-- Operational optimization
-- Predictive logistics analytics
-- Executive reporting
-
----
-
-# Business Impact
-
-This project demonstrates how data analytics and machine learning can be used to:
-
-- Improve delivery reliability
-- Reduce operational inefficiencies
-- Protect profitability
-- Increase customer satisfaction
-- Support proactive supply chain decision-making
-
-Instead of waiting for customers to discover their package is orbiting Saturn.
-
----
-
-# Reference
-
-Project developed using supply chain analytics concepts, operational KPI analysis, and machine learning techniques inspired by real-world logistics optimization practices.
-
----
-
 # Author
 
 **Chandran**  
