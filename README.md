@@ -340,7 +340,7 @@ Prediction & Evaluation
 
 ### Model Objectives
 
-The model was designed to :
+The model was designed to -
 
 * Predict late deliveries before shipment
 * Support proactive intervention
